@@ -1,0 +1,9 @@
+*** settings ***
+Library  Collections
+Library  RequestsLibrary
+*** test cases ***
+simpleRequest
+    Create Session  basic  http://echo.jsontest.com/framework/robot-framework/api/rest
+    ${result}   Get Request  basic  /
+    Should Be Equal  ${result.status_code}  ${200}
+    ${json} =  Set Variable  ${result.json()}
