@@ -20,7 +20,7 @@ this_path="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 docker build $BUILD_ARGS --tag "rfdocker:$BUILD_NAME" "$BUILD_DIR"
 
-docker run --rm -ti -e HOST_UID=$(id -u) -e HOST_GID=$(id -g) $RUN_ARGS \
+docker run --rm --cap-add=SYS_ADMIN -ti -e HOST_UID=$(id -u) -e HOST_GID=$(id -g) $RUN_ARGS \
   -v "$this_path/tests":/home/robot/tests \
   -v "$this_path/results":/home/robot/results \
   "rfdocker:$BUILD_NAME" "${@:-tests}"

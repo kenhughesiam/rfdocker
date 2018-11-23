@@ -2,4 +2,4 @@ selenium
 robotframework
 robotframework-selenium2library
 robotframework-ExtendedRequestsLibrary
-#robotframework-requests
+robotframework-Requests
