@@ -1,1 +1,3 @@
 robotframework-ExtendedRequestsLibrary
+cryptography
+robotframework-sshlibrary
